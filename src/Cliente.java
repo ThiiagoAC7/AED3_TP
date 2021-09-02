@@ -5,14 +5,15 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 
 public class Cliente{
-
-    //Declaração de variáveis
+    
     public int id;
     public int cpf;
     public String nome;
     public String email;
 
-    //Construtor vazio
+    /**
+     * Construtor vazio da Classe   
+     */
     public Cliente(){
         this.id = -1;
         this.cpf = -1;
@@ -20,7 +21,14 @@ public class Cliente{
         this.email = "";
     }
 
-    //Construtor
+    /**
+     * Construtor da Classe
+     * @param id Id do Cliente
+     * @param cpf CPF do Cliente
+     * @param nome Nome do Cliente
+     * @param email Email do Cliente
+     * @return String com as informações do Cliente
+     */
     public Cliente(int id, int cpf, String nome, String email) {
         this.id = id;
         this.cpf = cpf;
@@ -28,12 +36,18 @@ public class Cliente{
         this.email = email;
     }
 
-    //Imprime Cliente
+    /**
+     * Imprime os atributos do Cliente
+     */
     public String imprimeCliente() {
         return "\nID...: " + this.id + "\nCPF..: "+ this.cpf + "\nNome.: " + this.nome + "\nEmail: " + this.email;
     } 
 
-    //
+    /**
+     * Converte os atributos da classe em um vetor de bytes
+     * @return Vetor de bytes com as informações do Cliente
+     * @throws IOException caso haja problema com a manipulação do arquivo
+     */
     public byte[] toByteArray() throws IOException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         DataOutputStream dos = new DataOutputStream(baos);
@@ -44,7 +58,11 @@ public class Cliente{
         return baos.toByteArray();
     }
 
-    //
+    /**
+     * Converte o vetor de bytes em atributos da classe
+     * @param ba Vetor de bytes com as informações do Cliente
+     * @throws IOException caso haja problema com a manipulação do arquivo
+     */
     public void fromByteArray(byte[] ba) throws IOException {
         ByteArrayInputStream bais = new ByteArrayInputStream(ba);
         DataInputStream dis = new DataInputStream(bais);
@@ -54,12 +72,17 @@ public class Cliente{
         email = dis.readUTF();
     }
 
-    //Retorna o id do cliente
+    /**
+     * Envia o id do Cliente
+     * @return Id do Cliente
+     */
     public int getId() {
         return id;
     }
 
-    //Recebe um inteiro como Parâmetro e o define como id do cliente
+    /**
+     * Recebe um inteiro como Parâmetro e o define como id do cliente
+     */
     public void setId(int id) {
         this.id = id;
     }
