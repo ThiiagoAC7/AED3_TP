@@ -58,7 +58,7 @@ public class CRUD{
      */
     public Cliente read(int id) throws IOException {
          arq.seek(4);
-        //pular cabecalho
+        //pular cabeçalho
 
         byte lapide;
         byte[] b;
@@ -69,7 +69,7 @@ public class CRUD{
             tam = arq.readInt();
             b = new byte[tam];
             arq.read(b);
-            if(lapide != ' ') {
+            if(lapide != '*') {
                 objeto = new Cliente();
                 objeto.fromByteArray(b);
                 if(objeto.getId() == id) {
@@ -100,7 +100,7 @@ public class CRUD{
             tam = arq.readInt();
             b = new byte[tam];
             arq.read(b);
-            if(lapide != ' ') {
+            if(lapide != '*') {
                 objeto = new Cliente();
                 objeto.fromByteArray(b);
                 if(objeto.getId() == novoObjeto.getId()) {
@@ -113,7 +113,7 @@ public class CRUD{
                         arq.seek(pos);
                         arq.writeByte(' ');
                         arq.seek(arq.length());
-                        arq.writeByte(' ');
+                        arq.writeByte('*');
                         arq.writeInt(novoB.length);
                         arq.write(novoB);
                     }
@@ -130,7 +130,7 @@ public class CRUD{
      */
     public boolean delete(int id) throws IOException {
         arq.seek(4);
-        //pular cabecalho
+        //pular cabeçalho
         long pos;
         byte lapide;
         int tam;
@@ -142,12 +142,12 @@ public class CRUD{
             tam = arq.readInt();
             b = new byte[tam];
             arq.read(b);
-            if(lapide != ' ') {
+            if(lapide != '*') {
                 objeto = new Cliente();
                 objeto.fromByteArray(b);
                 if(objeto.getId() == id) {
                     arq.seek(pos);
-                    arq.writeByte(' ');
+                    arq.writeByte('*');
                     return true;
                 }
             }
