@@ -30,7 +30,7 @@ public class Cliente{
 
     //Imprime Cliente
     public String imprimeCliente() {
-        return "\nID...: " + this.id + "\nCPF..:"+ this.cpf + "\nNome.: " + this.nome + "\nEmail: " + this.email;
+        return "\nID...: " + this.id + "\nCPF..: "+ this.cpf + "\nNome.: " + this.nome + "\nEmail: " + this.email;
     } 
 
     //

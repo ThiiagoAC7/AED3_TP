@@ -25,6 +25,8 @@ public class Main{
                         System.out.print("CPF: ");
                         int cpf1 = in.nextInt();
                         System.out.print("\n");
+                        //avança para proxima linha
+                        in.nextLine();
                         //ler nome
                         System.out.print("Nome: ");
                         String nome1 = in.nextLine();
@@ -64,6 +66,8 @@ public class Main{
                         System.out.print("CPF: ");
                         int cpf3 = in.nextInt();
                         System.out.print("\n");
+                        //avança para proxima linha
+                        in.nextLine();
                         //ler nome
                         System.out.print("Nome: ");
                         String nome3 = in.nextLine();
