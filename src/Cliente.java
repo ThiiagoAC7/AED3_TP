@@ -4,7 +4,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-public class Pessoa implements Registro{
+public class Cliente{
 
     //Declaração de variáveis
     public int id;
@@ -13,7 +13,7 @@ public class Pessoa implements Registro{
     public String email;
 
     //Construtor vazio
-    public Pessoa{
+    public Cliente(){
         this.id = -1;
         this.cpf = -1;
         this.nome = "";
@@ -21,12 +21,17 @@ public class Pessoa implements Registro{
     }
 
     //Construtor
-    public Pessoa(int id, int cpf, String nome, String email) {
+    public Cliente(int id, int cpf, String nome, String email) {
         this.id = id;
         this.cpf = cpf;
         this.nome = nome;
         this.email = email;
     }
+
+    //Imprime Cliente
+    public String imprimeCliente() {
+        return "\nID...: " + this.id + "\nCPF..:"+ this.cpf + "\nNome.: " + this.nome + "\nEmail: " + this.email;
+    } 
 
     //
     public byte[] toByteArray() throws IOException {
@@ -49,12 +54,12 @@ public class Pessoa implements Registro{
         email = dis.readUTF();
     }
 
-    //Retorna o id da pessoa
+    //Retorna o id do cliente
     public int getId() {
         return id;
     }
 
-    //Recebe um inteiro como Parâmetro e o define como id da pessoa
+    //Recebe um inteiro como Parâmetro e o define como id do cliente
     public void setId(int id) {
         this.id = id;
     }
