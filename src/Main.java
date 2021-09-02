@@ -121,7 +121,6 @@ public class Main{
                     default:
                         System.out.println("Número Inválido!");
                         break;
-                        //diogao
                 }
 
             } while(menu!=0);
