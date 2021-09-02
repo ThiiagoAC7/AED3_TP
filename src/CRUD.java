@@ -1,7 +1,5 @@
 import java.io.IOException;
 import java.io.RandomAccessFile;
-import java.io.ByteArrayOutputStream;
-import java.lang.reflect.Constructor;
 
 public class CRUD{
 
@@ -152,16 +150,31 @@ public class CRUD{
                 }
             }
         }
-
         return false;
     }
 
-    /**
-     * Verifica se arq ja foi criado
-     * @return true caso arq != null
+    /** 
+     * Imprime todos Clientes do arquivo
      */
-    public boolean getArqIsNull(){
-        return (arq == null) ?  false : true;
-    }
+    public void readAll() throws IOException {
+        arq.seek(4);
+        //pular cabeçalho
 
+        byte lapide;
+        byte[] b;
+        int tam;
+        Cliente objeto;
+        while(arq.getFilePointer() < arq.length()) {
+            lapide = arq.readByte();
+            tam = arq.readInt();
+            b = new byte[tam];
+            arq.read(b);
+            if(lapide != '*') {
+                objeto = new Cliente();
+                objeto.fromByteArray(b);
+                System.out.println(objeto.imprimeCliente());
+            }
+        }
+
+    }
 }
