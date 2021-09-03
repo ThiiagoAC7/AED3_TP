@@ -17,6 +17,8 @@ public class Main{
                 System.out.println("0- Sair\n");
                 System.out.print("Opção: ");
                 menu = in.nextInt();
+                //avança para proxima linha
+                in.nextLine();
                 System.out.print("\n");
 
                 switch(menu) {
@@ -24,10 +26,8 @@ public class Main{
                     case 1: 
                         //ler cpf
                         System.out.print("CPF..: ");
-                        int cpf1 = in.nextInt();
+                        String cpf1 = in.nextLine();
                         System.out.print("\n");
-                        //avança para proxima linha
-                        in.nextLine();
                         //ler nome
                         System.out.print("Nome.: ");
                         String nome1 = in.nextLine();
@@ -68,12 +68,12 @@ public class Main{
                         System.out.print("ID...: ");
                         int id3 = in.nextInt();
                         System.out.print("\n");
-                        //ler cpf
-                        System.out.print("CPF..: ");
-                        int cpf3 = in.nextInt();
-                        System.out.print("\n");
                         //avança para proxima linha
                         in.nextLine();
+                        //ler cpf
+                        System.out.print("CPF..: ");
+                        String cpf3 = in.nextLine();
+                        System.out.print("\n");
                         //ler nome
                         System.out.print("Nome.: ");
                         String nome3 = in.nextLine();

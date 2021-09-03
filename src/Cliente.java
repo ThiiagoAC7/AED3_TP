@@ -7,7 +7,7 @@ import java.io.IOException;
 public class Cliente{
     
     public int id;
-    public int cpf;
+    public String cpf;
     public String nome;
     public String email;
 
@@ -16,7 +16,7 @@ public class Cliente{
      */
     public Cliente(){
         this.id = -1;
-        this.cpf = -1;
+        this.cpf = "";
         this.nome = "";
         this.email = "";
     }
@@ -29,7 +29,7 @@ public class Cliente{
      * @param email Email do Cliente
      * @return String com as informações do Cliente
      */
-    public Cliente(int id, int cpf, String nome, String email) {
+    public Cliente(int id, String cpf, String nome, String email) {
         this.id = id;
         this.cpf = cpf;
         this.nome = nome;
@@ -52,7 +52,7 @@ public class Cliente{
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         DataOutputStream dos = new DataOutputStream(baos);
         dos.writeInt(id);
-        dos.writeInt(cpf);
+        dos.writeUTF(cpf);
         dos.writeUTF(nome);
         dos.writeUTF(email);
         return baos.toByteArray();
@@ -67,7 +67,7 @@ public class Cliente{
         ByteArrayInputStream bais = new ByteArrayInputStream(ba);
         DataInputStream dis = new DataInputStream(bais);
         id = dis.readInt();
-        cpf = dis.readInt();
+        cpf = dis.readUTF();
         nome = dis.readUTF();
         email = dis.readUTF();
     }

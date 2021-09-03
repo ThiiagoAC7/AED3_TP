@@ -4,7 +4,7 @@ import java.io.RandomAccessFile;
 public class CRUD{
 
     private RandomAccessFile arq;
-    private final String nomeArq = "usuario.db";
+    private final String nomeArq = "clientes.db";
 
     /**
      * Construtor da Classe   
@@ -36,7 +36,7 @@ public class CRUD{
         arq.seek(arq.length());
         byte[] b = objeto.toByteArray();
 
-        //escreve L�pide
+        //escreve Lápide
         arq.writeByte(' ');
 
         //escreve Tamanho do array
