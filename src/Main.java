@@ -1,6 +1,9 @@
 import java.util.Scanner;
 
 public class Main{
+    /**
+     * Integrantes do Trabalho: Reynaldo Villar Garavini, Thiago Amado Costa
+     */
     public static void main(String[] args) {
 
         try {

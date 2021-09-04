@@ -82,6 +82,7 @@ public class Cliente{
 
     /**
      * Recebe um inteiro como Parâmetro e o define como id do cliente
+     * @param id Novo id do Cliente
      */
     public void setId(int id) {
         this.id = id;
