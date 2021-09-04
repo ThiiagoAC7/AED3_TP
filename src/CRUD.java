@@ -109,9 +109,9 @@ public class CRUD{
                     }
                     else {
                         arq.seek(pos);
-                        arq.writeByte(' ');
-                        arq.seek(arq.length());
                         arq.writeByte('*');
+                        arq.seek(arq.length());
+                        arq.writeByte(' ');
                         arq.writeInt(novoB.length);
                         arq.write(novoB);
                     }
