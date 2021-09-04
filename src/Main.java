@@ -12,7 +12,7 @@ public class Main{
                 System.out.println("\n1- Inserir Cliente");
                 System.out.println("2- Imprimir Cliente");
                 System.out.println("3- Atualizar Cliente");
-                System.out.println("4- Deletar CLiente");
+                System.out.println("4- Deletar Cliente");
                 System.out.println("5- Imprimir Todos");
                 System.out.println("0- Sair\n");
                 System.out.print("Opção: ");
